@@ -1,0 +1,20 @@
+
+
+{% load sorting %}
+
+{% auto_sort s2 %}
+
+<p>Sort by name: {% sort_link "Name" "name" %}
+<p>Sort by parent: {% sort_link "Parent" "parent" %}
+<p>Sort by parent name: {% sort_link "Parent" "parent__name" %}
+<p>Sort by parent name: {% sort_link "Parent" "parent__name" "Parent"%}
+
+<ul>
+{% for el in s2 %}
+<li>
+{{ el }}
+</li>
+{% endfor %}
+<ul>
+      
+    

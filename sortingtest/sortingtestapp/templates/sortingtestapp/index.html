@@ -1,0 +1,16 @@
+{% load sorting %}
+
+{% auto_sort s1 %}
+
+<p>Sort by name: {% sort_link "Name" "name" %}
+<p>Sort by roll: {% sort_link "Roll" "roll" %}
+
+<ul>
+{% for el in s1 %}
+<li>
+{{ el }}
+</li>
+{% endfor %}
+<ul>
+      
+    
