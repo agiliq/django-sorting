@@ -1,0 +1,3 @@
+django-sorting is a pluggable app in the spirit of django-pagination.
+
+It allows you to allow sorting on querysets, without handling them in views.
