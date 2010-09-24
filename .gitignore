@@ -9,3 +9,6 @@ localsettings.py
 *.tmp*~
 *CACHE*
 *.kpf
+*egg-info/
+dist/
+build/
