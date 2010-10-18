@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>agiliq/django-sorting @ GitHub</title>
+	
+	<style type="text/css">
+		body {
+  		margin-top: 1.0em;
+  		background-color: #a9b775;
+		  font-family: "Helvetica,Arial,FreeSans";
+  		color: #000000;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+		h1 { font-size: 3.8em; color: #56488a; margin-bottom: 3px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h2 { font-size: 1.5em; color: #56488a; }
+    h3 { text-align: center; color: #56488a; }
+    a { color: #56488a; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+		pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+	</style>
+	
+</head>
+
+<body>
+  <a href="http://github.com/agiliq/django-sorting"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/agiliq/django-sorting/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/agiliq/django-sorting/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://github.com/agiliq/django-sorting">django-sorting</a>
+      <span class="small">by <a href="http://github.com/agiliq">agiliq</a></span></h1>
+
+    <div class="description">
+      Sorting for Django. Yo.
+    </div>
+
+    <p>django-sorting is a pluggable app in the spirit of django-pagination.
+
+It allows you to allow sorting on querysets, without handling them in views.
+
+Usage
+-------------
+
+Inlude `sorting` in your `INSTALLED_APPS`
+
+Put `{% load sorting %}` at top of your templates.
+
+Your templates have two new tags available.
+
+`auto_sort`
+`sort_link`
+
+The basic usage is.::
+
+    {% sort_link "link text" "field_name" %}
+    {% auto_sort queryset %}
+    
+
+sort_link
+-----------------
+The basic usage is.::
+    
+    {% sort_link "link text" "field_name" %}
+
+Sort link outputs a link which will sort on the given field. The field to sort on should be
+a database field, or something which `.order_by` of queryset would work.
+
+
+Example usage.::
+    
+    {% sort_link "Name" "name" %}
+    
+It may also be used as.
+
+    {% sort_link "link text" "field_name" "vis_name" %}
+
+    {% sort_link "Name" "name" "what" %}
+    
+This is useful if you do not wnat to expose your database fields in urls.
+
+
+auto_sort
+-------------------
+
+Basic usage is.::
+
+    {% auto_sort queryset %}
+
+It sorts the queryset in place and replaces the queryset by the sorted queryset.
+
+This needs to be called prior to a slice has been taken from a queryset.
+(Ordering can not be done after the slice has been taken.) In particular this will
+not work with generuc view `object_list`.
+
+License
+-----------
+This code is available under a GPL or a BSD license.
+
+
+History
+------------
+There is a well used Django sorting library at http://github.com/directeur/django-sorting . So why another?
+Well, I had this library written before I was aware of this library. :)
+The libraries are fairly close in functionality. But I think mine is better in two ways. :)
+
+0. It doesnt use a middleware
+1. It allows setting a visible name which is independent of the database field.</p><h2>License</h2>
+<p>Dual licensed under GPL and BSD license.</p>
+<h2>Authors</h2>
+<p>Shabda Raaj (shabda@agiliq.com)<br/><br/>      </p>
+<h2>Contact</h2>
+<p>Agiliq (github@agiliq.com)<br/>      </p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/agiliq/django-sorting/zipball/master">zip</a> or
+      <a href="http://github.com/agiliq/django-sorting/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/agiliq/django-sorting</pre>
+    </p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/agiliq/django-sorting">agiliq/django-sorting</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>
