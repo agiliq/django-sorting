@@ -1,0 +1,2 @@
+#No dependencies needed, apart from Django
+#Lets put an empty requirements.txt
