@@ -6,6 +6,8 @@ from django.test import Client
 from django.core.handlers.wsgi import WSGIRequest
 from django.test.client import Client
 
+from sortingtestapp.models import SortableThingy
+
 
 class RequestFactory(Client):
 
@@ -75,7 +77,7 @@ class TestTemplatetags(TestCase):
         print rendered
 
     def test_auto_sort(self):
-        from .sortingtestapp.models import SortableThingy
+
         sortable = SortableThingy.objects.all()
         template_str = """
         {% load sorting %}
@@ -85,7 +87,6 @@ class TestTemplatetags(TestCase):
         rendered = template.render(Context({"sortable": sortable}))
 
     def test_auto_sort_values(self):
-        from .sortingtestapp.models import SortableThingy
         sortable = SortableThingy.objects.all()
         template_str = """
         {% load sorting %}
