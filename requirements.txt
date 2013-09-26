@@ -1,2 +1,1 @@
-#No dependencies needed, apart from Django
-#Lets put an empty requirements.txt
+Django==1.5.1
