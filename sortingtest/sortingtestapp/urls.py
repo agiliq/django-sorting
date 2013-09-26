@@ -1,10 +1,5 @@
-from django.conf.urls.defaults import *
-
-
-
+from django.conf.urls import patterns
 
 urlpatterns = patterns('sortingtestapp.views',
-    (r'^$', 'index'),
-    (r'^xxx/$', 'index2'),
-    
-)
+                      (r'^$', 'index'),
+                      (r'^xxx/$', 'index2'), )
