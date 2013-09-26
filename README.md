@@ -1,8 +1,13 @@
+Django-sorting
+================================
+
+[![Build Status](https://travis-ci.org/agiliq/django-sorting.png?branch=master)](https://travis-ci.org/agiliq/django-sorting)
+
 django-sorting is a pluggable app in the spirit of django-pagination.
 
 It allows you to allow sorting on querysets, without handling them in views.
 
-Usage
+Usage:
 -------------
 
 Inlude `sorting` in your `INSTALLED_APPS`
@@ -18,12 +23,12 @@ The basic usage is.::
 
     {% sort_link "link text" "field_name" %}
     {% auto_sort queryset %}
-    
 
-sort_link
+
+sort_link:
 -----------------
 The basic usage is.::
-    
+
     {% sort_link "link text" "field_name" %}
 
 Sort link outputs a link which will sort on the given field. The field to sort on should be
@@ -31,19 +36,19 @@ a database field, or something which `.order_by` of queryset would work.
 
 
 Example usage.::
-    
+
     {% sort_link "Name" "name" %}
-    
+
 It may also be used as.
 
     {% sort_link "link text" "field_name" "vis_name" %}
 
     {% sort_link "Name" "name" "what" %}
-    
+
 This is useful if you do not wnat to expose your database fields in urls.
 
 
-auto_sort
+auto_sort:
 -------------------
 
 Basic usage is.::
@@ -56,12 +61,12 @@ This needs to be called prior to a slice has been taken from a queryset.
 (Ordering can not be done after the slice has been taken.) In particular this will
 not work with generuc view `object_list`.
 
-License
+License:
 -----------
 This code is available under a GPL or a BSD license.
 
 
-History
+History:
 ------------
 There is a well used Django sorting library at http://github.com/directeur/django-sorting . So why another?
 Well, I had this library written before I was aware of this library. :)
